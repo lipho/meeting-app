@@ -1,0 +1,30 @@
+{
+  "name": "meeting-app",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "bundle": "browserify app.js > ./js/ng.js",
+    "start": "autoreload-server -w \"\\.(html|css|js)\""
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/plus20charisma/meeting-app.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/plus20charisma/meeting-app/issues"
+  },
+  "homepage": "https://github.com/plus20charisma/meeting-app#readme",
+  "dependencies": {
+    "angular": "^1.5.6",
+    "angular-animate": "^1.5.6",
+    "angular-route": "^1.5.6"
+  },
+  "devDependencies": {
+    "browserify": "^13.0.1"
+  }
+}
