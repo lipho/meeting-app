@@ -1,12 +1,31 @@
 (function e(t,n,r){function s(o,u){if(!n[o]){if(!t[o]){var a=typeof require=="function"&&require;if(!u&&a)return a(o,!0);if(i)return i(o,!0);var f=new Error("Cannot find module '"+o+"'");throw f.code="MODULE_NOT_FOUND",f}var l=n[o]={exports:{}};t[o][0].call(l.exports,function(e){var n=t[o][1][e];return s(n?n:e)},l,l.exports,e,t,n,r)}return n[o].exports}var i=typeof require=="function"&&require;for(var o=0;o<r.length;o++)s(r[o]);return s})({1:[function(require,module,exports){
-var angular = require('angular');
-var ngAnimate = require('angular-animate');
-var ngRoute = require('angular-route');
+require('angular');
+require('angular-animate');
+require('angular-route');
 
-var app = angular.module('meetings', [ngRoute, ngAnimate]);
+var app = angular.module('meetings', ['ngRoute', 'ngAnimate']);
 
-app.controller('appCtrl', ['$scope', function($scope) {
+app.controller('regisCtrl', ['$scope', function($scope){
+    $scope.msg = "asdf";
+}]);
 
+app.config(['$routeProvider', function($routeProvider){
+    $routeProvider
+        .when('/login' , {
+            templateUrl: './views/login.html',
+            controller: 'regisCtrl'
+        })
+        .when('/register' , {
+            templateUrl: './views/register.html',
+            controller: 'regisCtrl'
+        })
+        .when('/success' , {
+            templateUrl: 'views/success.html',
+            controller: 'successCtrl'
+        })
+        .otherwise({
+            redirectTo: '/login'
+        });
 }]);
 },{"angular":7,"angular-animate":3,"angular-route":5}],2:[function(require,module,exports){
 /**
