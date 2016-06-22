@@ -632,3 +632,8 @@ input.ng-valid.ng-touched {
   color: red;
   padding-bottom: 10px;
 }
+
+/*angular cloak*/
+[ng\:cloak], [ng-cloak], [data-ng-cloak], [x-ng-cloak], .ng-cloak, .x-ng-cloak {
+  display: none !important;
+}

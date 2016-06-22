@@ -6,12 +6,15 @@
   <meta name="viewport" content="width=device-width, user-scalable=no">
   <link href='https://fonts.googleapis.com/css?family=Lato:400,100,700,900' rel='stylesheet' type='text/css'>
   <link rel="stylesheet" href="css/style.css">
-  <script type="text/javascript" src="/js/app.min.js"></script>
 </head>
-<body ng-app="meetings">
+<header>
+  <nav class="cf" ng-include="'views/nav.html'"></nav>
+</header>
+<body ng-app="meetings" class="ng-cloak">
 <header></header>
 <div class="page">
   <main class="cf" ng-view></main>
 </div>
+<script type="text/javascript" src="/js/app.min.js"></script>
 </body>
 </html>

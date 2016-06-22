@@ -6,14 +6,18 @@ var firebase = require('firebase');
 require('firebase/app');
 require('firebase/auth');
 require('firebase/database');
-require('angularfire');
+require('angularfire')
 
 var app = angular.module('meetings', ['ngRoute', 'ngAnimate', 'firebase'])
     .constant('FIREBASE_URL', 'https://meeting-app-49154.firebaseio.com/');
 
 app.controller('regisCtrl', ['$scope', '$firebaseAuth', 'FIREBASE_URL',
     function($scope, $firebaseAuth, FIREBASE_URL){
-    var creds = require('./creds');
+        
+    var creds = require('./creds.json');
+
+    var ref = firebase.initializeApp({creds});
+    var auth = $firebaseAuth(ref);
 
     $scope.login = function() {
         $scope.message = "Welcome " + $scope.user.email;
@@ -50,12 +54,12 @@ app.config(['$routeProvider', function($routeProvider){
             redirectTo: '/login'
         });
 }]);
-},{"./creds":2,"angular":8,"angular-animate":4,"angular-route":6,"angularfire":10,"firebase":16,"firebase/app":11,"firebase/auth":12,"firebase/database":13}],2:[function(require,module,exports){
-module.exports = {
-  apiKey       : "AIzaSyBYhgWstYSjeya3nUObZ3QOpnhMTDUXHbg",
-  authDomain   : "meeting-app-49154.firebaseapp.com",
-  databaseURL  : "https://meeting-app-49154.firebaseio.com",
-  storageBucket: "meeting-app-49154.appspot.com"
+},{"./creds.json":2,"angular":8,"angular-animate":4,"angular-route":6,"angularfire":10,"firebase":16,"firebase/app":11,"firebase/auth":12,"firebase/database":13}],2:[function(require,module,exports){
+module.exports={
+  apiKey: "AIzaSyBYhgWstYSjeya3nUObZ3QOpnhMTDUXHbg",
+  authDomain: "meeting-app-49154.firebaseapp.com",
+  databaseURL: "https://meeting-app-49154.firebaseio.com",
+  storageBucket: "meeting-app-49154.appspot.com",
 }
 },{}],3:[function(require,module,exports){
 /**

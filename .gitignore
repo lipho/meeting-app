@@ -132,3 +132,5 @@ fabric.properties
 /js/lib
 .idea/
 .idea/*
+creds.json
+creds.js
