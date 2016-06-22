@@ -5,7 +5,7 @@ require('angular-route');
 var app = angular.module('meetings', ['ngRoute', 'ngAnimate']);
 
 app.controller('regisCtrl', ['$scope', function($scope){
-    $scope.msg = "asdf";
+
 }]);
 
 app.config(['$routeProvider', function($routeProvider){

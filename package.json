@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "bundle": "browserify app.js > ./js/ng.js; watchify app.js -o ./js/ng.js",
+    "bundle": "browserify app.js -o ./js/app.min.js; watchify app.js -o ./js/app.min.js",
     "dev": "gulp"
   },
   "repository": {
