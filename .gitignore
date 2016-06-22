@@ -130,4 +130,5 @@ fabric.properties
 
 #My Stuff
 /js/lib
-.gitignore
+.idea/
+.idea/*
