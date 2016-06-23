@@ -1,17 +1,13 @@
 require('angular');
 require('angular-animate');
 require('angular-route');
-var firebase = require('firebase');
-require('firebase/app');
-require('firebase/auth');
-require('firebase/database');
 require('angularfire');
 
 var app = angular.module('meetings', ['ngRoute', 'ngAnimate', 'firebase'])
     .constant('FIREBASE_URL', 'https://meeting-app-49154.firebaseio.com/');
 
-app.controller('regisCtrl', ['$scope', '$firebaseAuth', 'FIREBASE_URL',
-    function($scope, $firebaseAuth, FIREBASE_URL){
+app.controller('regisCtrl', ['$scope', '$createUser', 'FIREBASE_URL',
+    function($scope, $createUser, FIREBASE_URL){
     var creds = require('./creds');
 
     var ref = firebase.initializeApp(creds);
